@@ -45,7 +45,7 @@ a {
 }
 
 #about-us {
-  min-height: 80vh;
+  min-height: 90vh;
 }
 
 @media screen and (max-width: 895px) {
@@ -78,7 +78,7 @@ a {
   justify-content: center;
   gap: 40px;
 }
-
+/* 
 .my-svg-background {
   background-color: hsla(239, 32%, 28%, 1);
   background-image: radial-gradient(
@@ -88,6 +88,10 @@ a {
     ),
     radial-gradient(at 0% 0%, hsla(231, 100%, 55%, 1) 0px, transparent 50%);
   background-size: cover;
+} */
+
+.main {
+  background: url(assets/background.svg);
 }
 
 .main h2 {
@@ -149,6 +153,24 @@ a {
   margin-left: 20px;
 }
 
+@media screen and (max-width: 1550px) {
+  .image img {
+    height: 350px;
+    max-width: 500px;
+  }
+  .main h2 span {
+    font-size: 2.2em;
+    font-weight: 700;
+  }
+  .main h3 {
+    font-size: 1.5em;
+  }
+  .card-text {
+    padding: 10px;
+    font-size: medium;
+  }
+}
+
 @media screen and (max-width: 1250px) {
   .image img {
     height: 250px;
@@ -156,7 +178,7 @@ a {
   }
 
   .main h2 span {
-    font-size: 2.2em;
+    font-size: 2.4em;
     font-weight: 700;
   }
   .main h3 {
@@ -164,40 +186,6 @@ a {
   }
   .main h2 {
     font-size: 0.9em;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .main {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-  }
-  .main .text {
-    text-align: center;
-  }
-  .main h2 {
-    font-size: 1.4em;
-    font-weight: 500;
-  }
-
-  .main h2 span {
-    font-size: 3em;
-    font-weight: 800;
-  }
-
-  .main h3 {
-    font-size: 2em;
-  }
-  .social-icons {
-    text-align: center;
-  }
-  .image img {
-    display: none;
   }
 }
 
@@ -315,24 +303,6 @@ a {
   animation-name: move-down1;
 }
 
-@media screen and (max-width: 1550px) {
-  .image img {
-    height: 350px;
-    max-width: 500px;
-  }
-  .main h2 span {
-    font-size: 2.2em;
-    font-weight: 700;
-  }
-  .main h3 {
-    font-size: 1.5em;
-  }
-  .card-text {
-    padding: 10px;
-    font-size: medium;
-  }
-}
-
 @media screen and (max-width: 1380px) {
   .content {
     width: 70%;
@@ -353,16 +323,6 @@ a {
   }
 }
 
-@media screen and (max-width: 550px) {
-  .content {
-    width: 80%;
-    flex-direction: column;
-  }
-  .card:hover {
-    transform: scale(1.05);
-  }
-}
-
 @keyframes move-up6 {
   to {
     transform: translateY(-10px);
@@ -372,5 +332,137 @@ a {
 @keyframes move-down1 {
   to {
     transform: translateY(10px);
+  }
+}
+
+#team {
+  min-height: 40vh;
+  margin-top: 60px;
+  background: url(assets/background2.svg);
+}
+
+#team h2 {
+  color: white;
+}
+
+.team-content {
+  width: 100%;
+  height: 70%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.project-card {
+  background-color: #fff;
+  box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
+  border-radius: 10px;
+  min-height: 14em;
+  width: 20%;
+  overflow: hidden;
+  margin: 20px;
+  transition: 0.7s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.1);
+}
+
+.project-card:hover {
+  opacity: 0.9;
+}
+
+.project-image img {
+  width: 100%;
+}
+
+.project-info {
+  padding: 1em;
+}
+
+.project-category {
+  font-size: 0.8em;
+  color: #000;
+}
+
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+  .main .text {
+    text-align: center;
+  }
+  .main h2 {
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+
+  .main h2 span {
+    font-size: 2.2em;
+    font-weight: 800;
+  }
+
+  .main h3 {
+    font-size: 1.2em;
+  }
+  .social-icons {
+    text-align: center;
+  }
+  .image img {
+    display: none;
+  }
+  .team-content {
+    flex-direction: column;
+  }
+  .project-card {
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .content {
+    width: 80%;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .card-inner h2 {
+    font-size: larger;
+  }
+  .card-inner p {
+    font-size: medium;
+  }
+  .project-card {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .content {
+    width: 80%;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: scale(1.05);
+  }
+  .project-card {
+    width: 60%;
   }
 }
